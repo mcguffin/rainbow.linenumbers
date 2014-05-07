@@ -25,7 +25,7 @@ if (window.Rainbow&&!window.Rainbow.linenumbers) window.Rainbow.linenumbers = (f
 		var rxLineMatch = /\r\n|\r|\n/g
 			,iLines = block.innerHTML.replace(rxLineMatch,"\n").split("\n").length
 			,iLineStart = block.getAttribute('data-line')<<0||1
-			,bAddLineNumbering = iLineStart>=1
+			,bAddLineNumbering = iLineStart>=0
 			,sBlockId = 'rb'+iBlock
 			,mBlockParent = block.parentNode // pre
 			//
