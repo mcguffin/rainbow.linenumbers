@@ -14,9 +14,9 @@ if (window.Rainbow&&!window.Rainbow.linenumbers) window.Rainbow.linenumbers = (f
 	//
 	// add generic .line style
 	var mGenericLineStyle = document.createElement('style');
-	mGenericLineStyle.appendChild(document.createTextNode('pre code.rainbow .line { position: relative; padding-right: 10px; }'
-			+'pre code.rainbow .line:before{ content: attr(data-line); display: inline-block; text-align: right; }'
-			+'pre code.rainbow .line:after{ content:\'\'; position: absolute; left: 0; bottom: 0; }'));
+	mGenericLineStyle.appendChild(document.createTextNode('.rainbow .line { position: relative; padding-right: 10px; }'
+			+'.rainbow .line:before{ content: attr(data-line); display: inline-block; text-align: right; }'
+			+'.rainbow .line:after{ content:\'\'; position: absolute; left: 0; bottom: 0; }'));
 	document.head.appendChild(mGenericLineStyle);
 	//
 	// handle each code block
@@ -64,8 +64,8 @@ if (window.Rainbow&&!window.Rainbow.linenumbers) window.Rainbow.linenumbers = (f
 			setBlockStyle(block.offsetWidth);
 		}
 		function setBlockStyle(lineWidth) {
-			mStyleContent.nodeValue = 'pre code.rainbow.'+sBlockId+' .line:before{ width: '+iLineBlockWidth+'px; }'
-								+'pre code.rainbow.'+sBlockId+' .line:after{ width:'+(lineWidth||0)+'px }';
+			mStyleContent.nodeValue = '.rainbow.'+sBlockId+' .line:before{ width: '+iLineBlockWidth+'px; }'
+								+'.rainbow.'+sBlockId+' .line:after{ width:'+(lineWidth||0)+'px }';
 		}
 		// calculate character width to determine the size of the .line element
 		function calculateCharacterWidth(){
@@ -73,7 +73,7 @@ if (window.Rainbow&&!window.Rainbow.linenumbers) window.Rainbow.linenumbers = (f
 				,mTestDiv = document.createElement('div')
 				,oTestStyle = mTestDiv.style
 				,oCodeStyle = getStyle(block)
-				,oTestCSS = {fontFamily:oCodeStyle.fontFamily,fontSize:oCodeStyle.fontSize,width:'auto',display:'inline-block'}
+				,oTestCSS = {font:oCodeStyle.font,fontFamily:oCodeStyle.fontFamily,fontSize:oCodeStyle.fontSize,letterSpacing:oCodeStyle.letterSpacing,width:'auto',display:'inline-block'}
 				,iReturnWidth
 			;
 			mTestDiv.appendChild(document.createTextNode(new Array(1<<iTestExp).join('a')+'a'));
