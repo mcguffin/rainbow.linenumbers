@@ -73,7 +73,7 @@ if (window.Rainbow&&!window.Rainbow.linenumbers) window.Rainbow.linenumbers = (f
 				,mTestDiv = document.createElement('div')
 				,oTestStyle = mTestDiv.style
 				,oCodeStyle = getStyle(block)
-				,oTestCSS = {font:oCodeStyle.font,width:'auto',display:'inline-block'}
+				,oTestCSS = {fontFamily:oCodeStyle.fontFamily,fontSize:oCodeStyle.fontSize,width:'auto',display:'inline-block'}
 				,iReturnWidth
 			;
 			mTestDiv.appendChild(document.createTextNode(new Array(1<<iTestExp).join('a')+'a'));
